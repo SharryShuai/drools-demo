@@ -10,3 +10,10 @@ A snail climbs 4 metres a day, but falls 3 metres at night. The height of the tr
 
 How many DAYs does the snail need to climb to the top of the tree?
 
+
+
+## Week name translator
+
+See class: **com.activenetwork.sharry.week.WeekTranslator**.
+
+To translate a numeric day (1-7) in Chinese and English. 

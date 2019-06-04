@@ -21,6 +21,7 @@ public class SnailClimbingTree {
     private int climbedDistance;
     private int treeHeight;
     private boolean debugging;
+
     public static void main(String[] args) {
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
