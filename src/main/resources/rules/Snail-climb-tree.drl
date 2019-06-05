@@ -1,0 +1,41 @@
+package rules
+
+import sharry.SnailClimbingTree;
+import sharry.Phase;
+
+rule "climbing"
+    no-loop true
+    when
+        snail:SnailClimbingTree(phase == Phase.DAY) &&  SnailClimbingTree(climbedDistance < snail.treeHeight)
+    then
+        snail.setDay(snail.getDay() + 1);
+        snail.setClimbedDistance(snail.getClimbedDistance() + 4);
+        snail.setPhase(Phase.NIGHT);
+        update(snail);
+        debugSnail(snail, "climbed");
+end
+
+rule "falling"
+    no-loop true
+    when
+        snail:SnailClimbingTree(phase == Phase.NIGHT) &&  SnailClimbingTree(climbedDistance < snail.treeHeight)
+    then
+        snail.setClimbedDistance(snail.getClimbedDistance() - 3);
+        snail.setPhase(Phase.DAY);
+        update(snail);
+        debugSnail(snail, "fell");
+end
+
+rule "finish"
+    no-loop true
+    when
+        snail:SnailClimbingTree(climbedDistance == snail.treeHeight)
+    then
+        // do nothing
+end
+
+function debugSnail(SnailClimbingTree snail, String behaviour) {
+    if (snail.isDebugging()) {
+        System.out.println("Debugging. Day\t" + snail.getDay() + "\t" + snail.getName() + " " + behaviour + " to " + snail.getClimbedDistance() + " metres.");
+    } 
+}

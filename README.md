@@ -2,7 +2,7 @@
 
 ## Game of Snail climbs tree
 
-See class: **com.activenetwork.sharry.snail.SnailClimbingTree**.
+See class: **sharry.SnailClimbingTree**.
 
 Question:
 
@@ -14,6 +14,6 @@ How many DAYs does the snail need to climb to the top of the tree?
 
 ## Week name translator
 
-See class: **com.activenetwork.sharry.week.WeekTranslator**.
+See class: **sharry.WeekTranslator**.
 
 To translate a numeric day (1-7) in Chinese and English. 
